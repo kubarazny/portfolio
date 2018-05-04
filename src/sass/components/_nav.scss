@@ -1,0 +1,139 @@
+/* variables */
+$nav-toggle-bar-height: 0.4rem;
+$nav-width: 16rem;
+$z-nav-toggle: 2;
+$z-nav: 1;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $header__background-color;
+  padding: 0.5rem 0;
+  z-index: $z-nav;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__brand {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+
+
+/* nav toggle */
+.nav-toggle {
+  display: block;
+  cursor: pointer;
+  right: 2rem;
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  @include small {
+    display: none;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+
+  .nav-toggle-bar,
+  .nav-toggle-bar::after,
+  .nav-toggle-bar::before {
+    @include center-vertically;
+    @include transition(all 0.5s ease);
+    background: #fff;
+    content: '';
+    height: $nav-toggle-bar-height;
+    width: 100%;
+  }
+  .nav-toggle-bar {
+    margin-top: 0;
+  }
+  .nav-toggle-bar::after {
+    margin-top: 2 * $nav-toggle-bar-height;
+  }
+  .nav-toggle-bar::before {
+    margin-top: -2 * $nav-toggle-bar-height;
+  }
+  &.expanded .nav-toggle-bar {
+    background: transparent;
+  }
+  &.expanded .nav-toggle-bar::after,
+  &.expanded .nav-toggle-bar::before {
+    background: #fff;
+    margin-top: 0;
+  }
+  &.expanded .nav-toggle-bar::after {
+    transform: rotate(45deg);
+  }
+  &.expanded .nav-toggle-bar::before {
+    transform: rotate(-45deg);
+  }
+}
+
+/* nav */
+.nav {
+  @include small {
+    flex-basis: 65%;
+    display: flex;
+    justify-content: space-between;
+  }
+  @media screen and (max-width: 768px) {
+    @include transition(left 0.5s ease);
+    cursor: pointer;
+    height: 100vh;
+    left: -$nav-width;
+    position: fixed;
+    top: 0;
+    width: $nav-width;
+    padding: 6rem 2rem 2rem 2rem;
+    &.expanded {
+      left: 0;
+      background-color: $header__background-color;
+    }
+  }
+  &__list {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+  &__item {
+    a {
+      color: $header__link-color;
+      @include transition(color, .2s, ease);
+      &:hover {
+        color: $header__link-color--hover;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      border-bottom: 1px dashed $header__hamburger-color;
+      color: white;
+      display: block;
+      font-size: 1rem;
+      padding: 0.8rem 0;
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  ul {
+    @media screen and (max-width: 768px) {
+      @include center-vertically;
+      left: 2rem;
+      right: 2rem;
+    }
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}

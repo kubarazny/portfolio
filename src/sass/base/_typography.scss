@@ -1,0 +1,11 @@
+body {
+  font: $base__font-weight #{$base__font-size--small}/1 $base__font-family;
+  @include small {
+    font: $base__font-weight #{$base__font-size}/1 $base__font-family;
+  }
+  color: $base__text-color;
+}
+
+strong {
+  font-weight: $base__font-weight--bold;
+}

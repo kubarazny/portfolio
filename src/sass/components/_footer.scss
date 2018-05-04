@@ -1,0 +1,9 @@
+.footer {
+  .row {
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__icons {
+    font-size: 0.8rem;
+  }
+}

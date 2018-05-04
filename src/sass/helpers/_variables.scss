@@ -1,0 +1,42 @@
+// *--------- TYPOGRAPHY ---------*
+$base__font-family: "Roboto", Helvetica, Tahoma, sans-serif;
+$start_font-family: "Allura", Helvetica, Tahoma, sans-serif;
+$base__font-size: 18px;
+$base__font-size--small: 16px;
+$base__font-weight: 300;
+$base__font-weight--bold: 400;
+$base__line-height: 1.6;
+
+$heading__font-size--x-small: 1.2rem;
+$heading__font-size--small: 1.7rem;
+$heading__font-size--medium: 2.2rem;
+$heading__font-size--large: 3.5rem;
+$heading__font-size--x-large: 5.5rem;
+
+// *--------- COLORS ---------*
+$base__text-color: #000;
+$base__link-color: rgba(155, 38 ,38, 1);
+$base__link-color--hover: darken($base__link-color, 15%);
+$header__background-color: rgba(0, 0, 22, .6);
+$header__link-color: rgba(255, 255, 255, 1);
+$header__link-color--hover: rgba(155, 38 ,38, 1);
+$header__hamburger-color: rgba(155, 38, 38, 1);
+$button-color: rgba(155, 38 ,38, 1);
+
+// *--------- GRID ---------*
+
+$gutter-width: 1rem;
+$outer-margin: 2rem;
+$gutter-compensation: calc( (#{$gutter-width} * 0.5) * -1);
+$half-gutter-width: calc( #{$gutter-width} * 0.5);
+$xs-min: 30;
+$sm-min: 48;
+$md-min: 64;
+$lg-min: 75;
+$screen-xs-min: $xs-min + em;
+$screen-sm-min: $sm-min + em;
+$screen-md-min: $md-min + em;
+$screen-lg-min: $lg-min + em;
+$container-sm: calc( #{$sm-min}rem + #{$gutter-width} );
+$container-md: calc( #{$md-min}rem + #{$gutter-width} );
+$container-lg: calc( #{$lg-min}rem + #{$gutter-width} );

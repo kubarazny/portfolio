@@ -1,0 +1,242 @@
+.start {
+  @include cover-bg("../images/bg.jpg");
+  @include centering(both);
+  &__headers {
+    flex-direction: column;
+    text-align: center;
+    h1 {
+      font-size: $heading__font-size--large;
+      @include medium {
+        font-size: $heading__font-size--x-large;
+      }
+      font-family: $start_font-family;
+    }
+    h2 {
+      font-size: $heading__font-size--small;
+      @include small {
+        font-size: $heading__font-size--medium;
+      }
+      letter-spacing: 0.5rem;
+      margin-top: 20px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.about {
+  @include cover-bg("../images/about-bg.jpg");
+  @include centering(both);
+  @include padding-top-bottom(4rem);
+  p {
+    margin-bottom: 1.5rem;
+  }
+  h2 {
+    text-align: center;
+    font-size: $heading__font-size--small;
+    @include small {
+      font-size: $heading__font-size--medium;
+    }
+    @include medium {
+      font-size: $heading__font-size--large;
+    }
+    @include small {
+      margin-bottom: 2rem;
+    }
+  }
+  &__img {
+    @include centering(both);
+  }
+}
+
+.offer {
+  color: #fff;
+  @include padding-top-bottom(4rem);
+  @include cover-bg("../images/offer-bg.jpg");
+  @include centering(x);
+  flex-direction: column;
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    font-size: $heading__font-size--small;
+    @include small {
+      font-size: $heading__font-size--medium;
+    }
+    @include medium {
+      font-size: $heading__font-size--large;
+    }
+  }
+  h3 {
+    font-size: $heading__font-size--x-small;
+    font-weight: 400;
+    @include small {
+      font-size: $heading__font-size--small;
+    }
+      margin-top: 1.2rem;
+      margin-bottom: 1.75rem;
+  }
+  &__item {
+    @include centering(y);
+    text-align: center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+}
+
+.skills {
+  @include cover-bg('../images/skills-bg.jpg');
+  @include centering(both);
+  @include padding-top-bottom(4rem);
+  color: #fff;
+  h2 {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: center;
+    font-size: $heading__font-size--small;
+    @include small {
+      font-size: $heading__font-size--medium;
+    }
+    @include medium {
+      font-size: $heading__font-size--large;
+    }
+    @include small {
+      margin-bottom: 2rem;
+    }
+  }
+  h3 {
+    font-size: $heading__font-size--x-small;
+    @include small {
+      font-size: $heading__font-size--small;
+    }
+      margin-bottom: 1.75rem;
+  }
+
+
+  &__column {
+    padding: .8em 1em 0;
+    i {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+  }
+  &__item {
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+  }
+}
+
+.portfolio {
+  @include cover-bg('../images/portfolio-bg.jpg');
+  @include centering(both);
+  @include padding-top-bottom(4rem);
+  h2, h3 {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: center;
+      margin-bottom: 2rem;
+  }
+  h2 {
+    font-size: $heading__font-size--small;
+    @include small {
+      font-size: $heading__font-size--medium;
+    }
+    @include medium {
+      font-size: $heading__font-size--large;
+    }
+  }
+  h3 {
+    font-size: $heading__font-size--x-small;
+    @include small {
+      font-size: $heading__font-size--small;
+    }
+  }
+  .row {
+    justify-content: center;
+  }
+  &__item {
+    @include centering(x);
+    margin-bottom: 2rem;
+    img {
+      @include img-responsive;
+    }
+  }
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  &__button {
+    background-color: $button-color;
+    border: 1px solid transparent;
+    color: #fff;
+    padding: .5rem 1rem;
+    user-select: none;
+    margin: .1rem;
+    transition: background-color .3s ease-in-out;
+    cursor: pointer;
+    input {
+      position: absolute;
+      clip: rect(0, 0, 0, 0);
+      pointer-events: none;
+    }
+    &:hover {
+      background-color: lighten($button-color, 7%);
+    }
+    &:active, &:focus {
+      background-color: darken($button-color, 7%);
+      outline: 0;
+    }
+  }
+}
+
+.contact {
+  @include cover-bg('../images/contact-bg.jpg');
+  @include centering(both);
+  @include padding-top-bottom(4rem);
+  color: #fff;
+  h2, h3 {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: center;
+    @include small {
+      margin-bottom: 2rem;
+    }
+  }
+  h2 {
+    font-size: $heading__font-size--small;
+    @include small {
+      font-size: $heading__font-size--medium;
+    }
+    @include medium {
+      font-size: $heading__font-size--large;
+    }
+  }
+  h3 {
+    font-size: $heading__font-size--small;
+    @include small {
+      font-size: $heading__font-size--medium;
+    }
+  }
+  &__info {
+    padding: .8em 1em 0;
+    p {
+      margin-bottom: 1.5rem;
+    }
+  }
+  &__form {
+    flex: 1;
+  }
+}
+
+footer {
+  text-align: right;
+  @include padding-top-bottom(2rem);
+}
+
+.my-sizer-element {
+  opacity: 0;
+  position: absolute;
+  visibility: hidden;
+}
