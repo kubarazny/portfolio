@@ -17,6 +17,7 @@ const gulp = require("gulp"),
 site = 'https://www.kubarazny.pl';
 key = '';
 argv = require("yargs").argv;
+require('dotenv').config();
 // gutil = require("gulp-util");
 
 
@@ -139,10 +140,25 @@ gulp.task("upload", function() {
         host: process.env.FTP_dev_host,
         user: process.env.FTP_dev_user,
         password: process.env.FTP_dev_password,
-        log: gutil.log
+        log: $.gutil.log
     });
 
     return gulp.src("dist/**/*")
+        .pipe(conn.dest("public_html/"));
+
+});
+
+gulp.task("upload-prod", function() {
+
+    const conn = ftp.create({
+        host: process.env.FTP_prod_host,
+        user: process.env.FTP_prod_user,
+        password: process.env.FTP_prod_password,
+        log: $.util.log
+    });
+
+    return gulp.src("dist/**/*")
+        .pipe(conn.newerOrDifferentSize("public_html/"))
         .pipe(conn.dest("public_html/"));
 
 });
